@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul class="num">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>8</li>
+        <li>9</li>
+     
+    </ul>
+    <script>
+       const li7= document.createElement("li");
+       li7.innerText='7';
+
+       const numele=document.querySelector(".num");
+       const allListEle=numele.children;
+       console.log(allListEle);
+       const li8 =allListEle[6];
+       //(elementtobeinserted,elebefore)
+       numele.insertBefore(li7,li8);
+
+       setTimeout(() => {
+         numele.remove()
+       }, 3000);
+
+       const ListEle=Array.from(allListEle);
+       ListEle.forEach(ele=>ele.style.color="red");
+       
+
+    </script>
+</body>
+</html>

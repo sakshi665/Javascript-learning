@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>TODO LIST #</h1>
+    <input type="text" id="inputtext">
+    <button class="todobtn">Submit</button>
+    <ul class="todo"></ul>
+
+    <script>
+        const inputEle=document.getElementById("inputtext");
+        const btn = document.querySelector(".todobtn");
+        const ulEle = document.querySelector(".todo");
+
+        btn.addEventListener("click",addTodo)
+
+        function addTodo(){
+            //crete the task
+          let task=inputEle.value;
+          console.log(task);
+          
+          //create li tag add that taskinside it
+          const li=document.createElement("li");
+          li.textContent=task;
+          
+          //append li tag into ul
+          ulEle.appendChild(li);
+          
+          //Empty the input box
+          inputEle.value="";
+         
+        }
+        
+    </script>
+</body>
+</html>

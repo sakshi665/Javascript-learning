@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        I am h1
+    </h1>
+    <h1>I am sakshi</h1>
+    <h3>I am h3</h3>
+    <div>
+        <p class="para1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, magnam harum illum blanditiis nesciunt, suscipit, quidem voluptates dolores rerum facilis pariatur animi dolorum vero adipisci! Voluptatibus quidem iusto dolorum voluptates.</p>
+        <p class="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni molestiae nihil eos quam id porro in saepe! Mollitia, aliquam. Incidunt quia velit obcaecati facere placeat esse, nisi culpa vitae modi.</p>
+  
+    </div>
+    <input type="text">
+    <input type="password">
+    <button>click</button>
+     <h2>
+        Shopping list
+     </h2>
+     <!-- crud -->
+<ul class="num">
+     <ll>1</li>
+     <ll>2</li>
+     <ll>3</li>
+     <ll>4</li> 
+     <ll>5</li>
+     <ll>6</li>
+     <ll>8</li>
+     <ll>9</li>
+</ul>
+    <script>
+     //query selector
+     const  h1ele=document.querySelector(".para1");
+     console.log(h1ele[0]);
+
+     const allh1 = document.querySelectorAll("h1");
+     console.log(allh1.length);
+     console.log(allh1[0]);
+
+     //convert nodelist to array
+     const allh1toarr= Array.from(allh1);
+     allh1toarr.filter((ele)=>console.log(ele));
+
+     const h1Ele = document.getElementsByClassName("para");
+    console.log(h1ele);
+
+    //we can use nodelist but not able to use for html collections
+
+    //innerHTML,innerText,textContent
+    const div=document.querySelector("div");
+    console.log("InnerHtml",div.innerHTML);
+    console.log("InnerText",div.innerText);
+    console.log("textContent",div.textContent);
+
+    //Style attribute
+    //use this element to add styling over a dom ele
+    div.style.backgroundColor = "black";
+    div.style.color = "white";
+
+    //crud
+    //getArribute
+    console.log(div.children);//--->HTML collection
+    console.log(div.childNodes);//---->nodelist collection
+    const para1 =div.children[0];
+    let attributeVal=para1.getAttribute("style");
+    console.log(attributeVal);
+    
+
+    //SetAttribute
+     const allInput=document.querySelectorAll("input[type='text']");
+    allInput[0].setAttribute("type","Email");
+   
+    // allInput[0].setAttribute("class","userEmail");
+
+    //crud
+    // const li =document.createElement("li");
+    // li.textContent="Apple";
+    // const ul =document.querySelector("ul");
+    // let a=ul.appendChild(li); //return appended method
+    // //let a=ul.append(li); //doesn't return anything
+    // console.log(a);
+   
+    //adding li on 7 th posision
+    const li7=document.createElement("li");
+    li7.innerText='7';
+
+    const numul=document.querySelector(".num");
+    const allListEle=numul.children;
+    console.log(allListEle);
+    const li8 =allListEle[6];
+    numul.insertBefore(li7,li8);
+    
+
+    
+</script>
+</body>     
+</html>
