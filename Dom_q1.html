@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding-top: 10rem;
+
+        }
+
+        .movies{
+            width: 10rem;
+            height: 10rem;
+            background-color: black;
+            color: white;
+            margin: 50px;
+        }
+        .price{
+            background-color: red;
+            height: 8rem;
+            padding: 1.5rem;
+            font-size: 2rem;
+        }
+        .heading,
+        .price{
+            color: white;
+            text-align: center;
+            margin: 0;
+            
+        }
+        select,
+        h1{
+          
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+
+    <H1>Book Shows</H1>
+
+     <select name="" id="">
+        <option value="none">None</option>
+        <option value="action">action</option>
+        <option value="romance">romance</option>
+        <option value="comedy">comedy</option>
+     </select>
+
+    <div class="movies">
+        <h3 class="heading">Example-1</h3>
+        <p class="price" data-category="romance">Rs.200</p>
+    </div>
+
+     <div class="movies">
+        <h3 class="heading">Example-1</h3>
+        <p class="price" data-category="romance">Rs.100</p>
+    </div>
+
+     <div class="movies">
+        <h3 class="heading">Example-1</h3>
+        <p class="price" data-category="romance">Rs.400</p>
+    </div>
+
+     <div class="movies">
+        <h3 class="heading">Example-1</h3>
+        <p class="price" data-category="romance">Rs.300</p>
+    </div>
+
+     <div class="movies">
+        <h3 class="heading">Example-1</h3>
+        <p class="price" data-category="action">Rs.200</p>
+    </div>
+
+     <div class="movies">
+        <h3 class="heading">Example-1</h3>
+        <p class="price" data-category="action">Rs.250</p>
+    </div>
+
+     <div class="movies">
+        <h3 class="heading">Example-1</h3>
+        <p class="price" data-category="comedy">Rs.200</p>
+    </div>
+
+     <div class="movies">
+        <h3 class="heading">Example-1</h3>
+        <p class="price" data-category="comedy">Rs.200</p>
+    </div>
+
+     <div class="movies">
+        <h3 class="heading">Example-1</h3>
+        <p class="price" data-category="comedy">Rs.200</p>
+    </div>
+
+     <div class="movies">
+        <h3 class="heading">Example-1</h3>
+        <p class="price" data-category="comedy">Rs.200</p>
+    </div>
+
+     <div class="movies">
+        <h3 class="heading">Example-1</h3>
+        <p class="price" data-category="action">Rs.250</p>
+    </div>
+
+     <div class="movies">
+        <h3 class="heading">Example-1</h3>
+        <p class="price" data-category="action">Rs.250</p>
+    </div>
+
+     <div class="movies">
+        <h3 class="heading">Example-1</h3>
+        <p class="price" data-category="comedy">Rs.200</p>
+    </div>
+
+     <div class="movies">
+        <h3 class="heading">Example-1</h3>
+        <p class="price" data-category="action">Rs.250</p>
+    </div>
+
+    <script>
+        const options= document.querySelector("select");
+        const allmovies=document.querySelector(".movies");
+        options.addEventListener("change",(e)=>{
+            let genre=e.target.value;
+            getMovies(genre);
+        })
+        //first go todiv
+        function getMovies(genre){
+          allmovies.forEach(movie=>{
+            let movieGenre=movie.children[1].getAttribute("data-category");
+            if(movieGenre!=genre){
+                movie.style.display="none";
+
+            }else{
+                movie.style.display="block";
+            }
+
+          })
+        }
+    </script>
+</body>
+</html>

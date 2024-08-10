@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <H1>Shopping list</H1>
+    <ul></ul>
+    <script>
+        const ul=document.querySelector("ul");
+        //     console.time();
+        //     for(let i=0;i<1000;i++)
+        // {
+        //     const li=document.createElement("li");
+        //     li.textContent=`Item ${i+1}`;
+        //     ul.appendChild(li);
+
+        // }
+        // console.timeEnd();
+//-------------------------------------------------------------------------------------------------------------------------
+    // const div=document.querySelector("ul");
+    // console.time();
+    // for(let i=0;i<1000;i++)
+    // {
+    //     const li=document.createElement("li");
+    //     li.textContent=`Item ${i+1}`;
+    //     div.appendChild(li);
+
+    // }
+    //   //  console.timeEnd();
+    // ul.appendChild(div);
+
+    //we can crate a fragment node with which we can attach  a lot of node substructure 
+    //when we append a actual fragment to a dom element  .the fragment disapperes
+   
+//--------------------------------------------------------------------------------------------------------------------------------------
+      const fragment=document.createDocumentFragment();
+    console.time();
+    for(let i=0;i<1000;i++)
+    {
+        const li=document.createElement("li");
+        li.textContent=`Item ${i+1}`;
+        fragment.appendChild(li);
+
+    }
+     console.timeEnd();
+    ul.appendChild(fragment);
+        
+///------------------------------------------------------------------------------------------------------------------
+
+
+    </script>
+</body>
+</html>

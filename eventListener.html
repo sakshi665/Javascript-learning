@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            height: 100px;
+            width: 100px;
+            background-color: aquamarine;
+
+        }
+    </style>
+</head>
+<body>
+ 
+ <!-- <button onclick="cb()">click me</button> -->
+ <button>click me</button>
+ <input type="text">
+ <ul></ul>
+ <div class="box"></div>
+ <script>
+    //1.inline events
+//(i)
+    const btn =document.querySelector("button");
+    // function cb(){
+    //   console.log("button clicked");
+    // }
+//(II)
+    // btn.onclick= function cb(){
+    //   console.log("button clicked");
+    // }
+    //  btn.onclick= function cb(){
+    //   console.log("button clicked by me");
+    // }
+
+    //2.
+    //this event listener called multiple times
+    //if want to called it once there is a parameter once true 
+    btn.addEventListener("click",function(){
+        console.log("Button was clicked");
+    },{once:true})
+
+    btn.addEventListener("click",function(){
+        console.log("I am also calleed");
+    })
+    
+ </script>
+</body>
+
+</html>

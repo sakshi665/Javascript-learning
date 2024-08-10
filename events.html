@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+      <style>
+        .box{
+            height: 100px;
+            width: 100px;
+            background-color: aquamarine;
+
+        }   
+      </style>
+</head>
+<body>
+     <button>click me</button>
+ <input type="text">
+ <ul></ul>
+ <div class="box"></div>
+   <script>
+     const box=document.querySelector(".box");
+     //mouse Events
+     box.addEventListener("click",(event)=>{
+        console.log("click event occured");
+        console.log(event);
+     })
+
+     box.addEventListener("dblclick",(event)=>{
+        console.log("double click event occured");
+        console.log(event);
+     })
+
+      box.addEventListener("mousedown",(event)=>{
+        console.log("mousedown event occured");
+        console.log(event);
+     })
+
+      box.addEventListener("mouseup",(event)=>{
+        console.log("mouseup event occured");
+        console.log(event);
+     })
+
+      box.addEventListener("mouseenter",(event)=>{
+        console.log("mouseenter event occured");
+        box.style.backgroundColor="blue";
+     })
+      box.addEventListener("mousemove",(event)=>{
+        console.log("mousemove event occured");
+        console.log(event);
+     })
+
+      box.addEventListener("mouseleave",(event)=>{
+        console.log("mouseleave event occured");
+        console.log(event);
+     })
+
+     //keyboard events
+     let  input= document.querySelector("input");
+     input.addEventListener("keydown",(e)=>{
+        console.log("keyboard down event");
+        console.log(e);
+     })
+
+      input.addEventListener("keyup",(e)=>{
+        console.log("keyup event");
+        console.log(e);
+     })
+
+      input.addEventListener("keypress",(e)=>{
+        console.log("keypress event");
+        console.log(e);
+     })
+
+   </script>
+</body>
+</html>
