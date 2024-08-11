@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div[id]{
+            border: 1px solid red;
+        }
+
+        #outer_box{
+            height: 10rem;
+            width: 10rem;
+            background-color: lightblue;
+        }
+
+        #inner_box{
+            height: 50%;
+            width: 50%;
+            background-color: lightgreen;
+            margin-top: 10px;
+        }
+
+        #button{
+            margin-top: 3px;
+            background-color: lightsalmon;
+            width: 50%;
+            margin-left: 3px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Event Bubling</h1>
+    <div id="outer_box">outer-box
+        <div id="inner_box">inner-box
+            <div id="button">Click me </div>
+        </div>
+    </div>
+    
+    <script>
+        const outerbox=document.querySelector("#outer_box");
+        const innerbox=document.querySelector("#inner_box");
+        const btn=document.querySelector("#button");
+
+        document.addEventListener("click",(e)=>{
+            console.log("doc is clicked");
+             console.log(e.target);//originally on which event occured
+            console.log(e.currentTarget)//ELE ON WHICH LISTNER IS PRESENT
+        })
+
+        outerbox.addEventListener("click",(e)=>{
+            console.log("outerbox is clicked");
+             console.log(e.target);//originally on which event occured
+            console.log(e.currentTarget)//ELE ON WHICH LISTNER IS PRESENT
+        })
+        innerbox.addEventListener("click",(e)=>{
+            console.log("innerbox is clicked");
+             console.log(e.target);//originally on which event occured
+            console.log(e.currentTarget)//ELE ON WHICH LISTNER IS PRESENT
+
+        })
+        //it is bubbled over all boxes
+        btn.addEventListener("click",(e)=>{
+            console.log("btn is clicked");
+            console.log(e.target);//originally on which event occured
+            console.log(e.currentTarget)//ELE ON WHICH LISTNER IS PRESENT
+            e.stopPropagation();//click event does not propogate further to inner box so it stops at btn only
+            e.stopImmediatePropagation();//does not allow multiple call backs at the same events to be called
+        })
+       
+        btn.addEventListener("click",(e)=>{
+            console.log("another event listner from button");
+        })
+
+        //mouseevents
+        //mouseover and mouseout
+
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!-- use a single event handler and do the  -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         *{
+        box-sizing:border-box;
+    }
+    .container{
+        border: 1px solid;
+        height: 10rem;
+        width: 10rem;
+
+    }
+
+    </style>
+</head>
+<body>
+   <div class="container">
+    <div class="red">red</div>
+    <div class="blue">blue</div>
+    <div class="green">green</div>
+   </div>
+  <script>
+
+    const parent=document.querySelector(".container");
+    parent.addEventListener("click",function(e){
+        console.log(e.target);
+        const bgcolor=e.target.getAttribute("class");
+
+        if(bgcolor == "container")parent.style.backgroundColor="white";
+        else parent.style.backgroundColor=bgcolor;
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="productList">
+        <div>
+            <h1>All Products</h1>
+            <div class="product">
+                <h3>Product 1</h3>
+                <p>Price: $10</p>
+                <buttonn class="Add-to-cart">Add to cart</button>
+                <button class="WishList">WishList</button>
+            </div>
+
+            <div class="product">
+                <h3>Product 2</h3>
+                <p>Price: $30</p>
+                <buttonn class="Add-to-cart">Add to cart</button>
+                <button class="WishList">WishList</button>
+            </div>
+
+            <div class="product">
+                <h3>Product 3</h3>
+                <p>Price: $20</p>
+                <buttonn class="Add-to-cart">Add to cart</button>
+                <button class="WishList">WishList</button>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        const productList=document.getElementById("productList");
+        productList.addEventListener("click",(e)=>{
+            // console.log(e.target);
+            let ele=e.target;
+            let parent=ele.parentNode
+            console.log(parent);
+            if(ele.className == "Add-to-cart"){
+                let pEle=ele.previousElementSibling;
+                let productName=pEle.previousElementSibling;
+                console.log(pEle.textContent);
+                console.log(productName.textContent);
+                // console.log(parent.textContent);
+            }
+            else if(ele.className=="WishList"){
+                console.log("product added");
+            }
+        })  
+    </script>
+</body>
+</html>
