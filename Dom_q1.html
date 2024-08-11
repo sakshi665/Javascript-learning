@@ -126,7 +126,7 @@
 
     <script>
         const options= document.querySelector("select");
-        const allmovies=document.querySelector(".movies");
+        const allmovies=document.querySelectorAll(".movies");
         options.addEventListener("change",(e)=>{
             let genre=e.target.value;
             getMovies(genre);
